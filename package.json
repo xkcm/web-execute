@@ -11,14 +11,22 @@
   "scripts": {
     "test": "npx jest",
     "clear-dist": "rm -rf dist/",
-    "build:prod": "yarn clear-dist && npx tsc",
-    "build:dev": "yarn clear-dist && npx tsc",
-    "build": "yarn build:dev"
+    "build": "yarn clear-dist && npx tsc"
   },
   "devDependencies": {
+    "@types/body-parser": "^1.19.2",
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.4.0",
+    "@types/mongoose": "^5.11.97",
     "jest": "^27.4.7",
     "ts-jest": "^27.1.2",
     "tsc": "^2.0.3",
     "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "dotenv": "^11.0.0",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.6"
   }
 }

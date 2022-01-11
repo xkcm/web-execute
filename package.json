@@ -1,0 +1,24 @@
+{
+  "name": "web-execute",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "xkcm",
+    "email": "xkcm16+npm@gmail.com"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "npx jest",
+    "clear-dist": "rm -rf dist/",
+    "build:prod": "yarn clear-dist && npx tsc",
+    "build:dev": "yarn clear-dist && npx tsc",
+    "build": "yarn build:dev"
+  },
+  "devDependencies": {
+    "jest": "^27.4.7",
+    "ts-jest": "^27.1.2",
+    "tsc": "^2.0.3",
+    "typescript": "^4.5.4"
+  }
+}

@@ -1,6 +1,5 @@
 import bodyParser from "body-parser"
 import express from "express"
-import { resolve } from "path"
 import { TypedRequest } from "../typings"
 import dbService from "./db/dbService"
 import shell from "./shell"
@@ -28,7 +27,6 @@ function declareRoutes(){
 }
 
 function declareMiddleware(){
-  if (process.env.NODE_ENV === 'production') app.use(express.static(resolve(__dirname, "..", "public")))
   app.use(bodyParser.json()) // use body parser for parsing requests' json body
 }
 

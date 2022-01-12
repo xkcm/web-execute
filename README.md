@@ -13,7 +13,6 @@ docker-compose up # use docker-compose to start the app
 Send the `POST` request to the `/execute` URL with **JSON** object in the request's body:
 
 ```json
-// JSON Schema
 {
   "command": "your command here"
 }
@@ -33,6 +32,6 @@ fetch("http://localhost:4000/execute", {
 
 There is also a simple frontend page available. To run the frontend page you have to switch to the `frontend` git branch and run `docker` again.
 ```sh
-git branch frontend
+git switch frontend
 docker-compose up
 ```

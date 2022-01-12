@@ -13,7 +13,6 @@ docker-compose up # use docker-compose to start the app
 Send the `POST` request to the `/execute` URL with **JSON** object in the request's body:
 
 ```json
-// JSON Schema
 {
   "command": "your command here"
 }

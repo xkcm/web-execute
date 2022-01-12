@@ -1,15 +1,10 @@
-import { model, Schema } from "mongoose";
+import { model, Schema, Types } from "mongoose";
 import { CommandInterface } from "../../../typings";
 
 // mongoose schema
 const CommandSchema = new Schema<CommandInterface>({
-  command: {
-    type: String,
-    required: true
-  },
-  output: {
-    type: String
-  }
+  output: String,
+  command: String
 }, { timestamps: true })
 
 // mongoose model

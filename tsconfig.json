@@ -8,12 +8,14 @@
     "declaration": true,
     "outDir": "dist/",
     "downlevelIteration": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "skipDefaultLibCheck": true
   },
   "include": [
     "src/**/*"
   ],
   "exclude": [
-    "dist/**/*"
+    "dist/**/*",
+    "src/**/*.spec.ts"
   ]
 }

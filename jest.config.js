@@ -1,8 +1,9 @@
 module.exports = {
-  "roots": [
+  roots: [
     "<rootDir>"
   ],
-  "transform": {
+  transform: {
     "^.+\\.(ts|tsx)$": "ts-jest"
-  }
+  },
+  testEnvironment: "node"
 }

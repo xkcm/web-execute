@@ -13,8 +13,7 @@
     "clear-dist": "rm -rf dist/",
     "build": "yarn clear-dist && npx tsc",
     "dev": "export NODE_ENV=development && nodemon src/server/core/index.ts",
-    "run": "ts-node src/server/core/index.ts",
-    "build:prod": "yarn build && yarn --cwd src/client build && cp -r src/client/dist dist/public"
+    "run": "ts-node src/server/core/index.ts"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.2",

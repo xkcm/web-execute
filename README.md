@@ -33,5 +33,5 @@ fetch("http://localhost:4000/execute", {
 There is also a simple frontend page available. To run the frontend page you have to switch to the `frontend` git branch and run `docker` again.
 ```sh
 git branch frontend
-docker-compose up
+docker-compose up --build # rebuild the containers if needed
 ```

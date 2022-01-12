@@ -5,17 +5,16 @@
     "allowJs": true,
     "resolveJsonModule": true,
     "experimentalDecorators": true,
-    "declaration": true,
     "outDir": "dist/",
     "downlevelIteration": true,
     "esModuleInterop": true,
     "skipDefaultLibCheck": true
   },
   "include": [
-    "src/**/*"
+    "src/server/**/*"
   ],
   "exclude": [
     "dist/**/*",
-    "src/**/*.spec.ts"
+    "src/server/**/*.spec.ts"
   ]
 }

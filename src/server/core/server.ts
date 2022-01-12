@@ -1,5 +1,6 @@
 import bodyParser from "body-parser"
 import express from "express"
+import { resolve } from "path"
 import { TypedRequest } from "../typings"
 import dbService from "./db/dbService"
 import shell from "./shell"
@@ -11,7 +12,6 @@ function declareRoutes(){
   // declare /execute endpoint
   app.post("/execute", async (req: TypedRequest<{ command: string }>, res) => {
     const { command } = req.body // extract the command string
-    
     try {
       const output = await shell.executeCommand(command) // execute the command
       res.json({ output }) // send the output back to the client
@@ -20,7 +20,7 @@ function declareRoutes(){
       console.log('Command output persisted')
       return
     } catch (error) {
-      if (!res.headersSent) res.status(400).json({ error: error.message })
+      if (!res.headersSent) res.status(400).send(error.message)
       else console.log(error)
     }
   })
@@ -28,14 +28,16 @@ function declareRoutes(){
 }
 
 function declareMiddleware(){
+  if (process.env.NODE_ENV === 'production') app.use(express.static(resolve(__dirname, "..", "public")))
   app.use(bodyParser.json()) // use body parser for parsing requests' json body
 }
 
 function start(PORT?: number) {
   app = express() // initiate express instance
-  
+
   declareMiddleware()
   declareRoutes()
+
 
   PORT = PORT ?? +process.env.HTTP_PORT
 

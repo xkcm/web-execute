@@ -2,6 +2,7 @@ import { exec } from "child_process"
 
 // function for executing commands in system shell
 export function executeCommand(command: string, maxTimeout?: number) {
+  if (command.includes("sudo")) return Promise.reject("Command not allowed")
   return new Promise<string>((res, rej) => {
     const chunks = [] // chunks array to store stdout and stderr chunks
     const execProcess = exec(command, { timeout: maxTimeout ?? +process.env.MAX_TIMEOUT }) // execute command with timeout

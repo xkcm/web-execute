@@ -1,0 +1,16 @@
+**/dist/
+**/node_modules/
+**/tests/
+
+**/*.spec.ts
+
+.dockerignore
+.git
+.gitignore
+.env.development
+.env.test
+.env
+Dockerfile
+docker-compose.yml
+jest.config.js
+README.md

@@ -23,7 +23,7 @@ Send the `POST` request to the `/execute` URL with **JSON** object in the reques
 fetch("http://localhost:4000/execute", {
   method: "POST",
   data: JSON.stringify({
-    output: "uname -a"
+    command: "uname -a"
   })
 })
 ```
